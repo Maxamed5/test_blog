@@ -1,0 +1,33 @@
+languageCode = "de"
+removePathAccents = true
+disableFastRender = true
+buildFuture = true
+paginatePath = "seite"
+paginate = 12
+disableKinds = ["RSS", "section"]
+pygmentsCodefences = true
+copyright = "2019 by lernblog.ch - Creative Commons Attribution-ShareAlike 4.0"
+
+[params]
+lernblogName = "Lernblog"
+lernblogVersion = "1.3.5"
+lernblogUrl = "https://www.lernblog.ch"
+
+[permalinks]
+posts = "/:filename/"
+pages = "/:filename/"
+
+[taxonomies]
+tag = "tags"
+
+[outputs]
+home = ["HTML", "ATOM", "JSON"]
+
+[mediaTypes."application/atom+xml"]
+suffixes = ["xml"]
+
+[outputFormats.ATOM]
+mediaType = "application/atom+xml"
+baseName = "index"
+isPlainText = false
+

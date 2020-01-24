@@ -1,0 +1,30 @@
+{{ $settingsGeneral := .Site.GetPage "/settings/general" -}}
+{{ $settingsDesign := .Site.GetPage "/settings/design" -}}
+{{ $settingsAuthor := .Site.GetPage "/settings/author" -}}
+
+<meta name="generator" content="{{ .Site.Params.lernblogName }} {{ .Site.Params.lernblogVersion }} - {{ .Site.Params.lernblogUrl }}" />
+<link rel="icon" href="{{ $settingsDesign.Params.icon | default `/img/default-favicon.png` }}">
+<title>{{ with .Title }}{{ . }} | {{ end }}{{ $settingsGeneral.Title }}</title>
+<meta name="description" content="{{ .Description | default .Summary | default $settingsGeneral.Description }}">
+<meta name="author" content="{{ $settingsAuthor.Params.name }}">
+<meta name="twitter:card" content="summary">
+<meta property="og:title" content="{{ with .Title }}{{ . }} | {{ end }}{{ $settingsGeneral.Title }}">
+<meta property="og:description" content="{{ .Description | default .Summary | default $settingsGeneral.Description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ if .IsHome -}}
+{{ printf `<meta property="og:image" content="%s">` ($settingsDesign.Params.image | default "/img/default-image.png" | absURL) | safeHTML }}
+{{ else -}}
+  {{ if .Params.image -}}
+  {{ printf `<meta property="og:image" content="%s">` (partial "asset_url.html" (dict "folder" .RelPermalink "asset" .Params.image) | absURL) | safeHTML }}
+  {{ end -}}
+{{ end -}}
+{{ range .AlternativeOutputFormats -}}
+{{ printf `<link rel="%s" type="%s" href="%s" />` .Rel .MediaType.Type .Permalink | safeHTML }}
+{{ end -}}
+
+<!-- User-defined styles -->
+<style>
+:root {
+  --main-color: {{ $settingsDesign.Params.color | default "#000000" }}
+}
+</style>

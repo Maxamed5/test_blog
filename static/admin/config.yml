@@ -1,0 +1,286 @@
+backend:
+  name: git-gateway
+
+media_folder: "content/img"
+public_folder: "img"
+
+site_url: "/"
+display_url: "https://lernblog.ch"
+
+collections:
+  - label: "Blogeinträge"
+    label_singular: "Blogeintrag"
+    description: >
+      Hier können Blogeinträge verfasst, editiert und gelöscht werden.
+      Blogeinträge erscheinen in der Übersicht auf der Frontseite.
+    name: "posts"
+    preview_path: "{{slug}}/"
+    editor:
+      preview: false
+    folder: "content/posts"
+    create: true
+    format: toml-frontmatter
+    fields:
+      - {
+          label: "Titel",
+          name: "title",
+          widget: "string",
+          hint: "Beim ersten Speichern wird der Titel zur URL des Blogartikels.",
+        }
+      - {
+          label: "Datum",
+          name: "date",
+          widget: "date",
+          format: "YYYY-MM-DD",
+          dateFormat: "DD.MM.YYYY",
+        }
+      - {
+          label: "Entwurfsmodus",
+          name: "draft",
+          widget: "boolean",
+          hint: "Einträge im Entwurfsmodus werden nicht angezeigt.",
+          default: false,
+        }
+      - {
+          label: "Anheften",
+          name: "pinned",
+          widget: "boolean",
+          hint: "Angeheftete Einträge werden zuoberst vor den neusten Einträgen angezeigt.",
+          default: false,
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          required: false,
+          # pattern:
+          #   [
+          #     "^[^\\s#]+$",
+          #     "Darf keine Leerschläge oder # enthalten. Bitte mehrere Tags durch Komma trennen.",
+          #   ],
+          hint: "Achtung: Darf keine Leerschläge oder # enthalten! Tags sind hilfreich, damit Besucher nach diesen filtern können. Mehrere Tags durch Komma trennen.",
+        }
+      - {
+          label: "Bild",
+          name: "image",
+          widget: "image",
+          required: false,
+          hint: "Bild für Blogübersicht, Suchmaschinen und Social Media.",
+        }
+      - {
+          label: "Zusammenfassung",
+          name: "description",
+          widget: "text",
+          required: false,
+          hint: "Kurze Beschreibung für Blogübersicht, Suchmaschinen und Social Media (ca. 2 Sätze).",
+        }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+      - {
+          label: "Fussnoten",
+          name: "footnotes",
+          widget: "text",
+          required: false,
+          hint: "Kann für Quellenangaben oder andere Hinweise verwendet werden.",
+        }
+  - label: "Eigene Seiten"
+    label_singular: "Seite"
+    description: >
+      Eigene Seiten erscheinen nicht in der Übersicht mit den Blogeinträgen auf der 
+      Frontseite. Sie werden durch einen direkten Link aufgerufen. Wenn der Link unter 
+      Einstellungen/Navigation hinzugefügt wird, dann ist die Seite über die 
+      Navigation erreichbar.
+    name: "pages"
+    preview_path: "{{slug}}/"
+    editor:
+      preview: false
+    folder: "content/pages"
+    create: true
+    format: "toml-frontmatter"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - {
+          label: "Entwurfsmodus",
+          name: "draft",
+          widget: "boolean",
+          hint: "Seiten im Entwurfsmodus werden nicht angezeigt.",
+          default: false,
+        }
+      - {
+          label: "Bild",
+          name: "image",
+          widget: "image",
+          required: false,
+          hint: "Bild für Suchmaschinen und Social Media.",
+        }
+      - {
+          label: "Zusammenfassung",
+          name: "description",
+          widget: "text",
+          required: false,
+          hint: "Kurze Beschreibung für Suchmaschinen und Social Media (ca. 2 Sätze).",
+        }
+      - { label: "Inhalt", name: "body", widget: "markdown" }
+      - {
+          label: "Fussnoten",
+          name: "footnotes",
+          widget: "text",
+          required: false,
+          hint: "Kann für Quellenangaben oder andere Hinweise verwendet werden.",
+        }
+  - label: "Einstellungen"
+    name: "settings"
+    delete: false
+    editor:
+      preview: false
+    format: "toml-frontmatter"
+    files:
+      - label: "Allgemein"
+        name: "general"
+        file: "content/settings/general/index.md"
+        fields:
+          - {
+              label: "Headless",
+              name: "headless",
+              widget: "hidden",
+              default: "true",
+            }
+          - {
+              label: Seitentitel,
+              name: title,
+              widget: string,
+              hint: "Haupttitel der Website.",
+            }
+          - {
+              label: "Beschreibung",
+              name: "description",
+              widget: "string",
+              hint: "Eine kurze Beschreibung der Website (Tagline).",
+            }
+          - {
+              label: "Fusszeile links",
+              name: "footerLeft",
+              widget: "markdown",
+              required: false,
+              hint: "Fusszeile ganz unten links an der Seite.",
+            }
+          - {
+              label: "Fusszeile rechts",
+              name: "footerRight",
+              widget: "markdown",
+              required: false,
+              hint: "Fusszeile ganz unten rechts an der Seite.",
+            }
+      - label: "Autor"
+        name: "author"
+        file: "content/settings/author/index.md"
+        fields:
+          - {
+              label: "Headless",
+              name: "headless",
+              widget: "hidden",
+              default: "true",
+            }
+          - {
+              label: "Name des Autors",
+              name: "name",
+              widget: "string",
+              hint: "Dein Vor- und Nachname.",
+            }
+          - {
+              label: "Profilbild",
+              name: "image",
+              widget: "image",
+              required: false,
+              hint: "Kleines Bild (muss quadratisch sein).",
+            }
+          - {
+              label: "E-Mail",
+              name: "email",
+              widget: "string",
+              hint: "Deine E-Mail-Adresse. Diese wird verwendet, um dich als Autor erreichen zu können (z.B. für die Lernblog-Plattform).",
+            }
+      - label: "Design"
+        name: "design"
+        file: "content/settings/design/index.md"
+        fields:
+          - {
+              label: "Headless",
+              name: "headless",
+              widget: "hidden",
+              default: "true",
+            }
+          - {
+              label: Icon,
+              name: icon,
+              widget: image,
+              required: false,
+              hint: "Kleines, quadratisches Bild für das Browser-Tab.",
+            }
+          - {
+              label: Logo,
+              name: logo,
+              widget: image,
+              required: false,
+              hint: "Kleines Logo für die Navigation.",
+            }
+          - {
+              label: Hauptbild,
+              name: image,
+              widget: image,
+              required: false,
+              hint: "Hintergrundbild für die Startseite.",
+            }
+          - {
+              label: "Farbe",
+              name: "color",
+              widget: "string",
+              required: false,
+              hint: "Farbe für Links, Zitate, Buttons, etc. (als Hex-Farbcode, z.B. #ff7260)",
+              pattern:
+                ["^#[0-9a-fA-F]{3,6}$", "Muss ein gültiger Hex-Farbcode sein"],
+            }
+      - label: "Navigation"
+        name: "navigation"
+        file: "content/settings/navigation/index.md"
+        fields:
+          - {
+              label: "Headless",
+              name: "headless",
+              widget: "hidden",
+              default: "true",
+            }
+          - {
+              label: "Link",
+              name: "link",
+              widget: "list",
+              hint: "Links in der Navigation",
+              fields:
+                [
+                  { label: Titel, name: title, widget: string },
+                  { label: URL, name: url, widget: string },
+                ],
+            }
+      - label: "Code (für Profis)"
+        name: "code"
+        file: "content/settings/code/index.md"
+        fields:
+          - {
+              label: "Headless",
+              name: "headless",
+              widget: "hidden",
+              default: "true",
+            }
+          - {
+              label: Site Header Code,
+              name: siteHeader,
+              widget: text,
+              required: false,
+              hint: "Dieser Code wird im Head-Bereich auf jeder Seite eingefügt.",
+            }
+          - {
+              label: Site Footer Code,
+              name: siteFooter,
+              widget: text,
+              required: false,
+              hint: "Dieser Code wird am Ende des Body-Bereichs auf jeder Seite eingefügt.",
+            }
