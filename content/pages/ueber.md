@@ -4,7 +4,7 @@ draft = false
 description = "Seite über mich"
 image = ""
 +++
-![](/img/profil-picture.jfif)
+![](/img/maxamed.png)
 
 ## Maxamed Daud
 
