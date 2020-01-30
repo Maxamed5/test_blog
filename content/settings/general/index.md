@@ -1,8 +1,8 @@
 +++
 headless = true
-title = "Maxamed Daud"
-description = "My Blog"
+title = "Blog learning"
+description = "This is my blog learning! "
 footerLeft =  " <bold><strong>Contact:</strong></bold> [maxmed.daud@powercoders.org](//)"
 footerRight = ""
-+++
+
 
