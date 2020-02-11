@@ -7,3 +7,10 @@ pinned = false
 what I learned: 
 
 * await node.js
+
+  `await`
+*   ```
+  await 
+  ```
+
+  ``
