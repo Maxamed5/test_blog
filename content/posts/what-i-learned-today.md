@@ -3,6 +3,7 @@ title = "What I learned today!"
 date = "2020-02-12"
 draft = false
 pinned = false
+image = "img/vue roter.png"
 description = "1: B1 - Intermediate English Course\n2: Vue Router Data Fetching"
 +++
 ![](img/vue roter.png "Vue roter")
