@@ -6,7 +6,7 @@ pinned = true
 image = "img/vue roter.png"
 description = "1: B1 - Intermediate English Course\n2: Vue Router Data Fetching"
 +++
-![](img/vue roter.png "Vue roter")
+![]()
 
 **1: I learned today  B1 - Intermediate English Course:** B1 - Lesson 27 - Gadgets at Home and Work.
 
