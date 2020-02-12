@@ -5,10 +5,9 @@ draft = false
 pinned = false
 description = "1: B1 - Intermediate English Course\n2: Vue Router Data Fetching"
 +++
-**1: I learned today  B1 - Intermediate English Course:**
-B1 - Lesson 27 - Gadgets at Home and Work.
+![](img/vue roter.png "Vue roter")
 
-
+**1: I learned today  B1 - Intermediate English Course:** B1 - Lesson 27 - Gadgets at Home and Work.
 
 **2: Vue Router Data Fetching:**
 
@@ -104,7 +103,6 @@ export default {
   }
 }
 ```
-
 
 When using this approach, we navigate and render the incoming component immediately, and fetch data in the component's created hook. It gives us the opportunity to display a loading state while the data is being fetched over the network, and we can also handle loading differently for each view.
 
