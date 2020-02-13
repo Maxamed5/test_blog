@@ -1,6 +1,6 @@
 +++
 title = "What I learned today"
-date = "2020-02-12"
+date = "2020-02-13"
 draft = false
 pinned = false
 image = "img/2-vue-component-tree-large.jpeg"
