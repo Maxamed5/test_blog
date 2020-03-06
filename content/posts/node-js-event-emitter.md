@@ -3,7 +3,7 @@ title = "Node.js - Event Emitter"
 date = "2020-03-06"
 draft = false
 pinned = false
-image = "img/node.js-event-emitter.jpg"
+image = "img/node.js-event-emitter.bmp"
 description = "1: Node.js - Event Emitter\n#EventEmitter Class  #on and emit. on\n2: Methods Method & Description  #addListener(event, listener) #on(event, listener) #once(event, listener)\n#removeListener(event, listener)  #removeAllListeners([event]) #setMaxListeners(n)  #listeners(event) #emit(event, [arg1], [arg2], [...])\n3: Class Methods Method & Description #listenerCount(emitter, event)  #Events & Description #\t\nnewListener  #removeListener   #Examples"
 +++
 <!--StartFragment-->
