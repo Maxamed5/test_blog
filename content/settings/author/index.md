@@ -1,6 +1,6 @@
 +++
 headless = true
-name = "First name Last name"
-image = ""
-email = ""
+name = "Maxamed Daud"
+image = "img/moha_photo.jpeg"
+email = "maxamed.daud@powercoders.org"
 +++
