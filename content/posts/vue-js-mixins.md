@@ -3,7 +3,7 @@ title = "Vue.js Mixins"
 date = "2020-03-20"
 draft = false
 pinned = false
-image = "img/4ce1004df2.jpg"
+image = "img/4ce1004df2.png"
 description = "Vue.js Mixins\n1:  Basics  #Examples\n2:  Option Merging  #Examples\n3:   Global Mixin  #Examples\n4:  Custom Option Merge Strategies  Vue.config.optionMergeStrategies:  #Examples"
 +++
 <!--StartFragment-->
