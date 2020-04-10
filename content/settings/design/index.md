@@ -1,7 +1,7 @@
 +++
 headless = true
 icon = ""
-logo = ""
+logo = "img/logo.png"
 image = "img/2-vue-component-tree-large.jpeg"
 color = ""
 +++
